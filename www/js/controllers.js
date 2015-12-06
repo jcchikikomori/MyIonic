@@ -1,7 +1,10 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
-    
+.controller('DashCtrl', function($scope, $state) {
+  $scope.toIntro = function(){
+    //state.go expects the state of the app (view in app.js)
+    $state.go('intro');
+  }
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
@@ -29,6 +32,25 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('AboutCtrl', function($scope) {
-    
+.controller('AboutCtrl', function($scope) {})
+
+  //INTRO
+
+.controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
+
+  // Called to navigate to the main app
+  $scope.startApp = function() {
+    $state.go('tab.dash');
+  };
+  $scope.next = function() {
+    $ionicSlideBoxDelegate.next();
+  };
+  $scope.previous = function() {
+    $ionicSlideBoxDelegate.previous();
+  };
+
+  // Called each time the slide changes
+  $scope.slideChanged = function(index) {
+    $scope.slideIndex = index;
+  };
 });

@@ -1,0 +1,57 @@
+<ion-view view-title="">
+
+  <ion-nav-buttons side="left">
+    <button class="button button-dark no-animation" ng-click="startApp()" ng-show="!slideIndex">
+      Skip Intro
+    </button>
+    <button class="button button-dark no-animation" ng-click="previous()" ng-show="slideIndex > 0" ng-hide="slideIndex == 1">
+      Previous Slide
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-dark no-animation" ng-click="next()" ng-show="slideIndex != 2">
+      Okay, Next?
+    </button>
+    <button class="button button-dark no-animation" ng-click="startApp()" ng-show="slideIndex == 2">
+      Let's Go
+    </button>
+  </ion-nav-buttons>
+
+  <!--slide-->
+  <ion-slide-box on-slide-changed="slideChanged(index)">
+
+    <ion-slide>
+      <h3>Oh, you made it! Welcome to MyIonic!</h3>
+      <h4>Now after you setting up, you can explore.. </h4>
+      <div id="logo">
+        <img src="http://code.ionicframework.com/assets/img/app_icon.png">
+      </div>
+      <h4>..features with this demo app</h4>
+
+      <br />
+      <p>
+        Are you ready? You may slide this page
+      </p>
+      <p>
+        But if not, that's sad.
+      </p>
+    </ion-slide>
+    <ion-slide>
+      <h3>Before anything else..</h3>
+
+      <div id="list">
+        <h5>This demonstration app shows how:</h5>
+        <ol>
+          <li>Web Technologies could build apps including this one</li>
+          <li>and being awesome</li>
+        </ol>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <h3>Any questions or suggestions?</h3>
+      <p>
+        See me at github.com/jccultima123/MyIonic
+      </p>
+    </ion-slide>
+  </ion-slide-box>
+</ion-view>
