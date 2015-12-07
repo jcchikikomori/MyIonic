@@ -12,3 +12,13 @@ platforms/
 out
 gen
 plugins/
+
+### NetBeans ###
+nbproject/private/
+nbproject/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+.nb-gradle/
