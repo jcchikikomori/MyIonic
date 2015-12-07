@@ -56,6 +56,37 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+  
+  .state('tab.products', {
+    url: '/products',
+    views: {
+        'tab-products': {
+            templateUrl: 'templates/tab-products.html',
+            controller: 'ProductsCtrl',
+            resolve: {
+                products: function (Products) {
+                    return Products.top();
+                }
+            }
+        }
+    }
+  })
+  
+    .state('tab.product-detail', {
+        url: '/product/{productUrl:.*}',
+        views: {
+            'tab-products': {
+                templateUrl: 'templates/product-detail.html',
+                controller: 'ProductCtrl',
+                resolve: {
+                    product: function (Products, $stateParams) {
+                        var productUrl = $stateParams.productUrl;
+                        return Products.get(productUrl);
+                    }
+                }
+            }
+        }
+    })
 
   .state('tab.chats', {
       url: '/chats',

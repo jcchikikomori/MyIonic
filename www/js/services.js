@@ -47,4 +47,19 @@ angular.module('starter.services', [])
       return null;
     }
   };
+})
+
+.factory('Products', function($http) {
+    
+    return {
+        top: function() {
+            var url = 'http://www.demo.onehippo.com/restapi/topproducts?_type=json&sortby=hippogogreen%3Arating&sortdir=descending&max=10';
+            return $http.get(url);
+        },
+        get: function(productUrl) {
+            // Final url is productUrl + the _type=json argument
+            var url = productUrl + "?_type=json";
+            return $http.get(productUrl);
+        }
+    }
 });
