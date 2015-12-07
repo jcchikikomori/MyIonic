@@ -1,8 +1,14 @@
-<ion-view view-title="Account">
+<ion-view view-title="Account Preferences">
   <ion-content>
     <ion-list>
       <ion-toggle  ng-model="settings.enableFriends">
-          Enable Friends
+        Enable Friends
+      </ion-toggle>
+      <ion-toggle  ng-model="settings.goOffline">
+        Go Offline
+      </ion-toggle>
+      <ion-toggle  ng-model="settings.doNotDisturb">
+        Do Not Disturb
       </ion-toggle>
       <a class="item" href="#/">
         Start Over The Introduction
